@@ -1,4 +1,17 @@
-# 信息论基础
+---
+title: "信息论基础"
+description: 信息论基本概念
+comments: true
+hide: false
+toc: true
+layout: post
+hide: false
+categories: [信息论]
+<!-- image: images/fastpages_posts/codespaces/codespaces.png -->
+<!-- author: "<a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a>" -->
+author: "<a href='https://github.com/fangsfdavid'>林胜联府</a>"
+permalink: /basic-information-theory
+---
 
 总结一些基本概念:
 
