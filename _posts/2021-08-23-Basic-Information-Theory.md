@@ -1,5 +1,5 @@
 ---
-title: "信息论基础"
+title: "information theory"
 description: 信息论基本概念
 comments: true
 hide: false
