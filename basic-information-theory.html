@@ -7,10 +7,10 @@
 <title>信息论基础 | fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="信息论基础" />
-<meta name="author" content="<a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a>" />
+<meta name="author" content="<a href='https://github.com/fangsfdavid'>林胜联府</a>" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How a new GitHub feature makes literate programming easier than ever before." />
-<meta property="og:description" content="How a new GitHub feature makes literate programming easier than ever before." />
+<meta name="description" content="信息论基本概念" />
+<meta property="og:description" content="信息论基本概念" />
 <link rel="canonical" href="https://fangsfdavid.github.io/sample-blog/basic-information-theory" />
 <meta property="og:url" content="https://fangsfdavid.github.io/sample-blog/basic-information-theory" />
 <meta property="og:site_name" content="fastpages" />
@@ -18,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-08-23T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://fangsfdavid.github.io/sample-blog/basic-information-theory","@type":"BlogPosting","headline":"信息论基础","dateModified":"2021-08-23T00:00:00-05:00","datePublished":"2021-08-23T00:00:00-05:00","image":"https://fangsfdavid.github.io/sample-blog/images/fastpages_posts/codespaces/codespaces.png","author":{"@type":"Person","name":"<a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a>"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fangsfdavid.github.io/sample-blog/basic-information-theory"},"description":"How a new GitHub feature makes literate programming easier than ever before.","@context":"https://schema.org"}</script>
+{"url":"https://fangsfdavid.github.io/sample-blog/basic-information-theory","@type":"BlogPosting","headline":"信息论基础","dateModified":"2021-08-23T00:00:00-05:00","datePublished":"2021-08-23T00:00:00-05:00","image":"https://fangsfdavid.github.io/sample-blog/images/fastpages_posts/codespaces/codespaces.png","author":{"@type":"Person","name":"<a href='https://github.com/fangsfdavid'>林胜联府</a>"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fangsfdavid.github.io/sample-blog/basic-information-theory"},"description":"信息论基本概念","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/sample-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://fangsfdavid.github.io/sample-blog/feed.xml" title="fastpages" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -104,11 +104,11 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">信息论基础</h1><p class="page-description">How a new GitHub feature makes literate programming easier than ever before.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-23T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">信息论基础</h1><p class="page-description">信息论基本概念</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-23T00:00:00-05:00" itemprop="datePublished">
         Aug 23, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name"><a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a></span></span>
+            <span class="p-author h-card" itemprop="name"><a href='https://github.com/fangsfdavid'>林胜联府</a></span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -119,10 +119,10 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/sample-blog/categories/#codespaces">codespaces</a>
+        <a class="category-tags-link" href="/sample-blog/categories/#information theory">information theory</a>
         &nbsp;
       
-        <a class="category-tags-link" href="/sample-blog/categories/#nbdev">nbdev</a>
+        <a class="category-tags-link" href="/sample-blog/categories/#machine learning">machine learning</a>
         
       
       </p>
@@ -131,7 +131,18 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>总结一些基本概念:</p>
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#自信息">自信息</a></li>
+<li class="toc-entry toc-h2"><a href="#信息熵">信息熵</a></li>
+<li class="toc-entry toc-h2"><a href="#联合熵">联合熵</a></li>
+<li class="toc-entry toc-h2"><a href="#条件熵">条件熵</a></li>
+<li class="toc-entry toc-h2"><a href="#相对熵kl散度">相对熵（KL散度）</a></li>
+<li class="toc-entry toc-h2"><a href="#互信息">互信息</a></li>
+<li class="toc-entry toc-h2"><a href="#冗余">冗余</a></li>
+<li class="toc-entry toc-h2"><a href="#交叉熵">交叉熵</a></li>
+<li class="toc-entry toc-h2"><a href="#js散度">JS散度</a></li>
+<li class="toc-entry toc-h2"><a href="#wasserstein距离">Wasserstein距离</a></li>
+</ul><p>总结一些基本概念:</p>
 
 <ul>
   <li>自信息</li>
@@ -143,7 +154,8 @@ window.onload = wrap_img;
   <li>交叉熵</li>
 </ul>
 
-<h2 id="自信息">自信息</h2>
+<h2 id="自信息">
+<a class="anchor" href="#%E8%87%AA%E4%BF%A1%E6%81%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>自信息</h2>
 
 <p>自信息是对某一事件发生时所带来的信息量做了一个量化. 信息是一个比较抽象的概念, 一条信息所包含的信息量和它的不确定性有直接的联系, 而自信息就是把信息的度量等价于对不确定性减少程度的度量.</p>
 
@@ -164,7 +176,8 @@ window.onload = wrap_img;
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>p</mi><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo><mo>⟺</mo><mi>I</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>I</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>I</mi><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(x,y)=p(x)p(y)\Longleftrightarrow I(x,y)=I(x)+I(y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟺</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></span>
 
-<h2 id="信息熵">信息熵</h2>
+<h2 id="信息熵">
+<a class="anchor" href="#%E4%BF%A1%E6%81%AF%E7%86%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>信息熵</h2>
 
 <p>信息熵是考虑随机变量X的所有可能取值，对它们按概率分布加权平均：</p>
 
@@ -188,7 +201,8 @@ window.onload = wrap_img;
 
 <p>即信息熵都是正值，且从第二条性质来看，计算信息熵时的基底选择影响不是很大。</p>
 
-<h2 id="联合熵">联合熵</h2>
+<h2 id="联合熵">
+<a class="anchor" href="#%E8%81%94%E5%90%88%E7%86%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>联合熵</h2>
 
 <p>将一维随机变量分布推广到多维随机变量分布，就得到了联合熵：</p>
 
@@ -197,17 +211,10 @@ window.onload = wrap_img;
 
 <p>类似地可以定义$n$个随机变量的联合熵：$H(X_1,X_2,\ldots,X_n)$.</p>
 
-<h2 id="条件熵">条件熵</h2>
+<h2 id="条件熵">
+<a class="anchor" href="#%E6%9D%A1%E4%BB%B6%E7%86%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>条件熵</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td>条件熵$H(Y</td>
-      <td>X)$表示在已知随机变量X的条件下随机变量Y的不确定性。条件熵$H(Y</td>
-      <td>X)$的定义如下：</td>
-    </tr>
-  </tbody>
-</table>
+<p>条件熵表示在已知随机变量X的条件下随机变量Y的不确定性,其定义如下：</p>
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>x</mi><mo>∈</mo><mi mathvariant="script">X</mi></mrow></munder><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>H</mi><mo stretchy="false">(</mo><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi><mo>=</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(Y|X) = \sum\limits_{x\in\mathcal{X}} p(x) H(Y|X=x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3717110000000003em;vertical-align:-1.321706em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8556639999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathcal mtight" style="margin-right:0.14643em;">X</span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.321706em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span>
 
@@ -223,18 +230,12 @@ window.onload = wrap_img;
 
 <p>上式称为信息熵的链式法则。</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td><strong>注：</strong> 根据上面的推导可知：$H(Y</td>
-      <td>X)=H(X,Y)-H(X)$。假设系统中只有两个变量$X,Y$，其中$X$为输入变量，$Y$为输出变量，</td>
-    </tr>
-    <tr>
-      <td>那么联合熵$H(X,Y)$ 表示整个系统的不确定性，信息熵$H(X)$ 表示输入变量$X$的不确定性，条件熵$H(Y</td>
-      <td>X)$就刻画了知道输入变量后输出变量的不确定性，机器学习经典的最大熵原理就是在给定一些输入条件后，最大化输出变量的条件熵。</td>
-    </tr>
-  </tbody>
-</table>
+<p><strong>注：</strong> 根据上面的推导可知：</p>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo stretchy="false">)</mo><mo>−</mo><mi>H</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(Y|X)=H(X,Y)-H(X)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span></span>
+
+<p>假设系统中只有两个变量$X,Y$，其中$X$为输入变量，$Y$为输出变量，
+那么联合熵$H(X,Y)$ 表示整个系统的不确定性，信息熵$H(X)$ 表示输入变量$X$的不确定性，条件熵就刻画了知道输入变量后输出变量的不确定性，机器学习经典的最大熵原理就是在给定一些输入条件后，最大化输出变量的条件熵。</p>
 
 <p><strong>注：</strong> 根据后面互信息的性质以及信息熵、互信息和条件熵之间的关系:</p>
 
@@ -246,57 +247,18 @@ window.onload = wrap_img;
 
 <p>这也就是说，在知道另一个随机变量$Y$的信息后，可以降低随机变量$X$的不确定性，这一点很关键。</p>
 
-<h2 id="相对熵kl散度">相对熵（KL散度）</h2>
+<h2 id="相对熵kl散度">
+<a class="anchor" href="#%E7%9B%B8%E5%AF%B9%E7%86%B5kl%E6%95%A3%E5%BA%A6" aria-hidden="true"><span class="octicon octicon-link"></span></a>相对熵（KL散度）</h2>
 
 <p>相对熵也叫KL散度，可以用来衡量两个概率分布之间的差异。设X是离散随机变量，其所有取值构成集合$\mathcal{X}$，$p(x)$和$q(x)$ 是离散随机变量$X$的两个概率分布，则p对q的相对熵是：</p>
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>x</mi><mo>∈</mo><mi mathvariant="script">X</mi></mrow></munder><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>log</mi><mo>⁡</mo><mfrac><mrow><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">D_{KL}(p||q)=\sum\limits_{x\in\mathcal{X}}p(x)\log{\frac{p(x)}{q(x)}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.7487060000000003em;vertical-align:-1.321706em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8556639999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathcal mtight" style="margin-right:0.14643em;">X</span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.321706em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span>
 
-<table>
-  <tbody>
-    <tr>
-      <td>从上述定义可以看出，如果$p(x)=q(x), \forall x\in\mathcal{X}$，则我们有$D_{KL}(p</td>
-      <td> </td>
-      <td>q)=0$。更进一步，可以证明</td>
-    </tr>
-  </tbody>
-</table>
+<p>可以证明</p>
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>q</mi><mo stretchy="false">)</mo><mo>≥</mo><mn>0</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">D_{KL}(p||q)\geq 0,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span></span></span></span></span>
 
-<p>等号成立当且仅当$p(x)=q(x), \forall x\in\mathcal{X}$。</p>
-
-<p>总结一下关于相对熵的性质：</p>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$D_{KL}(p</td>
-          <td> </td>
-          <td>q)\geq 0$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$D_{KL}(p</td>
-          <td> </td>
-          <td>q)\neq D_{KL}(q</td>
-          <td> </td>
-          <td>p)$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>如果$p(x)$和$q(x)$两个分布相同，那么相对熵等于0.</li>
-</ul>
-
-<p>因此，我们可以使用相对熵来做为两个分布之间距离的某种近似刻画。需要注意的是相对熵并不是两个概率分布之间的距离，因为它并不满足对称性，即</p>
+<p>等号成立当且仅当$p(x)=q(x), \forall x\in\mathcal{X}$。我们可以使用相对熵来做为两个分布之间距离的某种近似刻画。需要注意的是相对熵并不是两个概率分布之间的距离，因为它并不满足对称性，即</p>
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>q</mi><mo stretchy="false">)</mo><mo mathvariant="normal">≠</mo><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mi>q</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D_{KL}(p||q)\neq D_{KL}(q||p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span></span>
 
@@ -304,7 +266,8 @@ window.onload = wrap_img;
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><msub><mi>D</mi><mrow><mi>K</mi><mi>L</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">(</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>q</mi><mo stretchy="false">(</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D_{KL}((p(x,y)||q(x,y)) = D_{KL}(p(x)||q(x)) + D_{KL}(p(y|x)||q(y|x))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span>
 
-<h2 id="互信息">互信息</h2>
+<h2 id="互信息">
+<a class="anchor" href="#%E4%BA%92%E4%BF%A1%E6%81%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>互信息</h2>
 
 <p>下面我们来介绍互信息，它是用来刻画一个随机变量$X$中所包含的关于另一个随机变量$Y$的信息量，其描述了两个随机变量之间的依赖程度。其定义公式如下：</p>
 
@@ -363,7 +326,8 @@ I(X;Y|Z) &amp;= H(X,Z) + H(Y,Z) - H(X,Y,Z) - H(Z) \\
 
 <p>从上式可知，条件互信息表示在随机变量$Z$已知的情况下，随机变量$Y$的信息对随机变量$X$ 的不确定的减少的量化度量，或者随机变量$X$的信息对随机变量$Y$的不确定性减少的量化度量。除此之外，条件互信息是定义两个随机过程之间转移熵的基础。</p>
 
-<h2 id="冗余">冗余</h2>
+<h2 id="冗余">
+<a class="anchor" href="#%E5%86%97%E4%BD%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>冗余</h2>
 
 <p>冗余、边际冗余和条件冗余其实是互信息和条件互信息的高维推广。互信息主要是用来研究两个变量之间的依赖关系，为研究多个变量之间的关系，
 Fraser 和Prichard 等人引入了冗余的概念。冗余的出发点是研究下面这个问题</p>
@@ -402,7 +366,8 @@ Fraser 和Prichard 等人引入了冗余的概念。冗余的出发点是研究�
 
 <p>条件冗余衡量了在已知变量$(x_2,\ldots,x_{m-1})$的条件下，变量$x_m$和$x_1$之间的依赖性，它可以看做是条件互信息的推广。</p>
 
-<h2 id="交叉熵">交叉熵</h2>
+<h2 id="交叉熵">
+<a class="anchor" href="#%E4%BA%A4%E5%8F%89%E7%86%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>交叉熵</h2>
 
 <p>所谓交叉熵，其实就是相对熵的一部分：</p>
 
@@ -421,7 +386,8 @@ Fraser 和Prichard 等人引入了冗余的概念。冗余的出发点是研究�
 
 <p>具体证明可以参考相对熵非负性的证明，主要是借助了凸函数和Jensen不等式。</p>
 
-<h2 id="js散度">JS散度</h2>
+<h2 id="js散度">
+<a class="anchor" href="#js%E6%95%A3%E5%BA%A6" aria-hidden="true"><span class="octicon octicon-link"></span></a>JS散度</h2>
 
 <p>JS散度衡量了两个概率分布之间的相似度，它是基于KL散度的变体，解决了KL散度非对称的问题。一般地，JS散度是对称的，且取值是在$[0,1]$范围内。具体定义如下：</p>
 
@@ -431,7 +397,8 @@ Fraser 和Prichard 等人引入了冗余的概念。冗余的出发点是研究�
 <p>KL 散度和JS散度度量的时候有一个问题：如果两个分布$P_1,P_2$距离很远，完全没有重叠的时候，那么KL散度是没有意义的，而JS散度此时是一个常数，
 这在机器学习中是比较致命的，因为此时意味着改点处的梯度为0，模型不能好好训练。</p>
 
-<h2 id="wasserstein距离">Wasserstein距离</h2>
+<h2 id="wasserstein距离">
+<a class="anchor" href="#wasserstein%E8%B7%9D%E7%A6%BB" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wasserstein距离</h2>
 
 <p>Wasserstein距离也是度量两个分布之间的距离，其定义如下：</p>
 
