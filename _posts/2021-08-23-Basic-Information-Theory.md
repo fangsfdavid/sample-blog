@@ -1,15 +1,14 @@
 ---
-title: "information theory"
-description: 信息论基本概念
+title: "信息论基础"
+description: How a new GitHub feature makes literate programming easier than ever before.
 comments: true
 hide: false
-toc: true
+toc: false
 layout: post
 hide: false
-categories: [信息论]
-<!-- image: images/fastpages_posts/codespaces/codespaces.png -->
-<!-- author: "<a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a>" -->
-author: "<a href='https://github.com/fangsfdavid'>林胜联府</a>"
+categories: [codespaces, nbdev]
+image: images/fastpages_posts/codespaces/codespaces.png
+author: "<a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a>"
 permalink: /basic-information-theory
 ---
 
