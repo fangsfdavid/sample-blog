@@ -1,14 +1,14 @@
 ---
 title: "信息论基础"
-description: How a new GitHub feature makes literate programming easier than ever before.
+description: 信息论基本概念
 comments: true
 hide: false
-toc: false
+toc: true
 layout: post
 hide: false
-categories: [codespaces, nbdev]
+categories: [information theory, machine learning]
 image: images/fastpages_posts/codespaces/codespaces.png
-author: "<a href='https://twitter.com/HamelHusain'>Hamel Husain</a> & <a href='https://twitter.com/jeremyphoward'>Jeremy Howard</a>"
+author: "<a href='https://github.com/fangsfdavid'>林胜联府</a>"
 permalink: /basic-information-theory
 ---
 
@@ -80,7 +80,7 @@ $$
 
 ## 条件熵
 
-条件熵$H(Y|X)$表示在已知随机变量X的条件下随机变量Y的不确定性。条件熵$H(Y|X)$的定义如下：
+条件熵表示在已知随机变量X的条件下随机变量Y的不确定性,其定义如下：
 
 $$
    H(Y|X) = \sum\limits_{x\in\mathcal{X}} p(x) H(Y|X=x)
@@ -103,8 +103,14 @@ $$
 上式称为信息熵的链式法则。
 
 
-**注：** 根据上面的推导可知：$H(Y|X)=H(X,Y)-H(X)$。假设系统中只有两个变量$X,Y$，其中$X$为输入变量，$Y$为输出变量，
-那么联合熵$H(X,Y)$ 表示整个系统的不确定性，信息熵$H(X)$ 表示输入变量$X$的不确定性，条件熵$H(Y|X)$就刻画了知道输入变量后输出变量的不确定性，机器学习经典的最大熵原理就是在给定一些输入条件后，最大化输出变量的条件熵。
+**注：** 根据上面的推导可知：
+
+$$ 
+ H(Y|X)=H(X,Y)-H(X)
+$$
+
+假设系统中只有两个变量$X,Y$，其中$X$为输入变量，$Y$为输出变量，
+那么联合熵$H(X,Y)$ 表示整个系统的不确定性，信息熵$H(X)$ 表示输入变量$X$的不确定性，条件熵就刻画了知道输入变量后输出变量的不确定性，机器学习经典的最大熵原理就是在给定一些输入条件后，最大化输出变量的条件熵。
 
 **注：** 根据后面互信息的性质以及信息熵、互信息和条件熵之间的关系:
 
@@ -124,21 +130,13 @@ $$
   D_{KL}(p||q)=\sum\limits_{x\in\mathcal{X}}p(x)\log{\frac{p(x)}{q(x)}}
 $$
 
-从上述定义可以看出，如果$p(x)=q(x), \forall x\in\mathcal{X}$，则我们有$D_{KL}(p||q)=0$。更进一步，可以证明
+可以证明
 
 $$
   D_{KL}(p||q)\geq 0,
 $$
 
-等号成立当且仅当$p(x)=q(x), \forall x\in\mathcal{X}$。
-
-总结一下关于相对熵的性质：
-
-- $D_{KL}(p||q)\geq 0$.
-- $D_{KL}(p||q)\neq D_{KL}(q||p)$.
-- 如果$p(x)$和$q(x)$两个分布相同，那么相对熵等于0.
-
-因此，我们可以使用相对熵来做为两个分布之间距离的某种近似刻画。需要注意的是相对熵并不是两个概率分布之间的距离，因为它并不满足对称性，即
+等号成立当且仅当$p(x)=q(x), \forall x\in\mathcal{X}$。我们可以使用相对熵来做为两个分布之间距离的某种近似刻画。需要注意的是相对熵并不是两个概率分布之间的距离，因为它并不满足对称性，即
 
 $$D_{KL}(p||q)\neq D_{KL}(q||p)$$
 
